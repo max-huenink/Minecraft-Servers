@@ -1,6 +1,8 @@
 minecraft-server
 ================
 Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers.
+
+Meant to be downloaded, and then unzipped on the Desktop. Please create a 'minecraftServers' directory on the Desktop as well, otherwise the scripts will not run properly.
 ## Purpose
 These scripts are for creating/starting minecraft servers (both vanilla and snapshot versions), as well as bukkit servers.
 
