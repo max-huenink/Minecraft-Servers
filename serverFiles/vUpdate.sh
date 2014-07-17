@@ -3,7 +3,7 @@
 sFiles="/home/${USER}/Desktop/serverFiles"
 #directory of serverFiles
 
-oldV=$(cat ${sFiles}/regStart.sh | grep v= | cut -c 3-40)
+oldV=$(cat ${sFiles}/regStart.sh | grep V= | cut -c 3-40)
 #Old minecraft version
 
 echo "What is the name of the new vanilla minecraft version? e.g "${oldV}
