@@ -3,7 +3,7 @@
 sFiles="/home/${USER}/Desktop/serverFiles"
 #directory of serverFiles
 
-oldV=$(cat ${sFiles}/snapshotStart.sh | grep v= | cut -c 3-40)
+oldV=$(cat ${sFiles}/snapshotStart.sh | grep V= | cut -c 3-40)
 #Old miencraft version
 
 echo "What is the name of the new snapshot? e.g "${oldV}
