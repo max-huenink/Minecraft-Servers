@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sFiles="/home/${USER}/Desktop/serverFiles"
+
 W=$(cat server.properties | grep level-name= | cut -c 12-40)
 #Gets level-name
 Z=$W"_$(date +%d-%m-%Y-%H:%M:%S).zip"
@@ -8,5 +10,5 @@ zip -r $Z $W
 #Zips the world file (${W}) recursively to ${Z}
 s=$(cat sType)
 #Gets the startFile to start the server with
-bash /home/${USER}/Desktop/serverFiles/${s}
+bash ${sFiles}/${s}
 #Starts the proper server
