@@ -1,4 +1,5 @@
 #!/bin/sh
-V=1.7.9-R0.3-20140603.002405-1
+sFiles="/home/${USER}/Desktop/serverFiles"
+V=-dev.1.7.10
 #Version
-java -Xmx1024M -jar /home/${USER}/Desktop/serverFiles/craftbukkit-${V}.jar -o true
+java -Xmx1024M -jar ${sFiles}/craftbukkit-${V}.jar -o true
