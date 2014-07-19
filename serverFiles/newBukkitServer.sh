@@ -1,6 +1,11 @@
 #!/bin/bash
 
-dir=/home/${USER}/Desktop/bukkitServers
+sFiles="/home/${USER}/Desktop/serverFiles"
+export sFiles
+#The directory for all server files
+#Is exported to child 'base.sh'
+
+dir="/home/${USER}/Desktop/bukkitServers"
 export dir
 #The DIRectory variable
 #Used to define the directory of bukkitServers, change as necessary.
@@ -20,5 +25,5 @@ export DOWNLOAD
 #'yes' or 'no'
 #Exported to child 'base.sh'
 
-bash /home/${USER}/Desktop/serverFiles/base.sh
+bash ${sFiles}/base.sh
 #Starts 'base.sh'
