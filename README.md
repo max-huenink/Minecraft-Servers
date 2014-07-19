@@ -1,8 +1,8 @@
 Minecraft Servers Creation/Initialization
 ================
-Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers.
+Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers. WARNING: Only works on *nix based computers, may work on windows if you have 'cygwin' installed, but this has not been tested fully.
 
-Meant to be downloaded, and then unzipped on the Desktop. Please create a 'minecraftServers' directory on the Desktop as well, otherwise the scripts will not run properly.
+Make sure to either run 'install.sh' or put all the files in the right directories.
 ## Purpose
 These scripts are for creating/starting minecraft servers (both vanilla and snapshot versions), as well as bukkit servers.
 
@@ -10,15 +10,11 @@ I will take any suggestions on things that need to be improved/added/removed
 
 If instructions are not very clear, please let me know. This is the first time I have done anything like this.
 ## Installation/Initialization
-You need to make sure that you have the directory structure setup correctly. You can change the scripts to have the correct 'minecraftServers' and serverFiles' directories setup. But as of right now, I do not have a script to change everything for you. I will be working on that eventually.
+To install, download entire 'serverFiles' directory, as well as 'install.sh'
 
-All Minecraft (Vanilla and Snapshot) servers will go in "/home/${USER}/Desktop/minecraftServers" you can change that if you wish. But you will have to change the variable 'dir' in each script.
+It doesn't matter where the 'serverFiles' directory is located, as long as you know the FULL location. '/home/${USER}/Downloads/serverFiles/' for example.
 
-All server files, 'regStart.sh newServer.sh etc.' will go in "/home/${USER}/Desktop/serverFiles" you can change that if you wish. But again, you wil have to change the variable 'sFiles' in each script.
-
-Some scripts don't have a 'dir' or 'sFiles' variable because the directory is only used once, I will change that soon.
-
-Once you have that inplace, download all required files (listed below) if you haven't already. Then you should run 'vUpdate.sh' and enter the most recent minecraft version '1.x.x' and the same for sVUpdate if you want to install snapshot servers.
+Next, you'll want to run 'install.sh' That will prompt you for where you want to install everything, and it will create the directory, and install all necessary files for you.
 
 To create your first server, run 'newServer.sh' and that will prompt you what the name for the server will be, and everything else. You may want to ask for changes on server.properties, as the defaults I have may not be what you would like.
 
