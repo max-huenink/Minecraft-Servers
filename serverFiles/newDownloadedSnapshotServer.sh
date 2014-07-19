@@ -1,5 +1,10 @@
 #!/bin/bash
 
+sFiles="/home/${USER}/Desktop/serverFiles"
+export sFiles
+#The directory for all server files
+#Is exported to child 'base.sh'
+
 dir=/home/${USER}/Desktop/minecraftServers
 export dir
 #The DIRectory variable
@@ -20,5 +25,5 @@ export DOWNLOAD
 #'yes' or 'no'
 #Exported to child 'base.sh'
 
-bash /home/${USER}/Desktop/serverFiles/base.sh
+bash ${sFiles}/base.sh
 #Starts 'base.sh'
