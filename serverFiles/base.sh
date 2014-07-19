@@ -204,10 +204,9 @@ if [[ ${VERSION} = reg ]]
 			echo "Marking server as vanilla"
 			${dots3}
 
-#			echo "Accepting EULA"
-#			echo "eula=true" >> eula.txt
-#			${dots3}
-#Is not needed until post 1.8
+			echo "Accepting EULA"
+			echo "eula=true" >> eula.txt
+			${dots3}
 
 			sType=$(cat sType)
 			echo "Starting server with ${sType}"
@@ -267,6 +266,10 @@ elif [ ${VERSION} = bukkit ]
 
 			ln -s ${sFiles}/cleanBukkitStart.sh
 			echo "Copying cleanBukkitStart.sh"
+			${dots3}
+
+			echo "Accepting EULA"
+			echo "eula=true" >> eula.txt
 			${dots3}
 
 			echo "Starting server with regBukkitStart.sh"
