@@ -6,7 +6,7 @@ echo "Please specify full locations i.e: /home/\${USER}/Desktop/serverFiles"
 sleep 1.5
 
 echo "Where would you like your serverFiles directory to be located?"
-sleep 0.75
+sleep 0.5
 echo -n "serverFiles: "
 read serverFiles
 
@@ -14,13 +14,13 @@ echo "Creating ${serverFiles}"
 mkdir -P ${serverFiles}
 
 echo "Where is the 'serverFiles' directory located?"
-sleep 0.75
+sleep 0.5
 read location
 mv ${location} ${serverFiles}
 cd ${serverFiles}
 
 echo "Where would you like your minecraftServers directory to be located?"
-sleep 0.75
+sleep 0.5
 echo -n "minecraftServers: "
 read minecraftServers
 
@@ -41,7 +41,7 @@ fi
 
 #SNAPSHOT
 echo "Would you like to install snapshot servers as well? [y/n]"
-sleep 0.75
+sleep 0.5
 read snapshot
 
 if [[ ${snapshot} = y ]]
@@ -62,7 +62,7 @@ read bukkit
 if [[ ${bukkit} = y ]]
 then
 	echo "Where would you like your bukkitServers directory to be located?"
-	sleep 1.5
+	sleep 1
 	echo -n "bukkitServers: "
 	read bukkitServers
 
