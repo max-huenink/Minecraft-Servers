@@ -1,6 +1,8 @@
 Minecraft Servers Creation/Initialization
 ================
-Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers. WARNING: Only works on *nix based computers, may work on windows if you have 'cygwin' installed, but this has not been tested fully.
+Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers.
+
+WARNING: Only works on *nix based computers, may work on windows if you have 'cygwin' installed, but this has not been tested fully.
 
 Make sure to either run 'install.sh' or put all the files in the right directories.
 ## Purpose
