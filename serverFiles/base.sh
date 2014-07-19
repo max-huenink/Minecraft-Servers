@@ -10,8 +10,6 @@
 #Separate users (which are defined by {}) with a comma
 #So '[{"uuid":"test","name":"ign"},{"uuid":"test2","name":"ign2"}]
 
-sFiles="/home/${USER}/Desktop/serverFiles"
-#Directory for all server files
 dots="bash ${sFiles}/dots.sh"
 dots1="bash ${sFiles}/dots1.sh"
 dots2="bash ${sFiles}/dots2.sh"
@@ -54,7 +52,7 @@ ${dots2}
 	#####################
 
 		####ops.json####
-		echo '["uuid":"1b7ffd7a-6c9a-463e-8910-60c7a531b2a4","name":"maxh76",level:4}]' >> ops.json
+		echo '[]' >> ops.json
 		echo "Creating ops.json"
 		#Change the contents of '[]' to add someone to the op file.
 		#Syntax at beginning of file
