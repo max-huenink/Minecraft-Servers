@@ -70,7 +70,7 @@ then
 	sleep 1
 	echo -n "bukkitServers: "
 	read bServers
-bukkitServers="${bServers}/bukkitServers"
+	bukkitServers="${bServers}/bukkitServers"
 
 	echo "Creating ${bukkitServers}"
 	eval mkdir -p ${bukkitServers}
