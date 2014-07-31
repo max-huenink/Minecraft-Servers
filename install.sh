@@ -18,7 +18,7 @@ sleep 0.75
 echo -n "Repo: "
 read location
 
-repo="${
+repo="${location}/Minecraft-Server-Creation-initialization-master/serverFiles"
 echo "Moving ${repo} to ${serverFiles}"
 eval mv ${location} ${serverFiles}
 eval cd ${serverFiles}
@@ -26,10 +26,11 @@ eval cd ${serverFiles}
 echo "Where would you like your minecraftServers directory to be located?"
 sleep 0.5
 echo -n "minecraftServers: "
-read minecraftServers
+read mServers
+minecraftServers="${
 
 echo "Creating ${minecraftServers}"
-mkdir -p ${minecraftServers}
+eval mkdir -p ${minecraftServers}
 vanilla=y
 
 #VANILLA
@@ -37,7 +38,7 @@ if [[ ${vanilla} = y ]]
 then
 	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newServer.sh
 	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newServer.sh newDownloadedServer.sh cleanStart.sh backupStart.sh regStart.sh server.sh vUpdate.sh
-	bash ${serverFiles}/vUpdate.sh
+	eval bash ${serverFiles}/vUpdate.sh
 else
 sleep 0
 fi
@@ -52,7 +53,7 @@ if [[ ${snapshot} = y ]]
 then
 	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newSnapshotServer.sh
 	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newSnapshotServer.sh newDownloadedSnapshotServer.sh snapshotStart.sh sVUpdate.sh
-	bash ${serverFiles}/sVUpdate.sh
+	eval bash ${serverFiles}/sVUpdate.sh
 else
 sleep 0
 fi
@@ -68,10 +69,11 @@ then
 	echo "Where would you like your bukkitServers directory to be located?"
 	sleep 1
 	echo -n "bukkitServers: "
-	read bukkitServers
+	read bServers
+bukkitServers="${bServers}/bukkitServers"
 
 	echo "Creating ${bukkitServers}"
-	mkdir -p ${bukkitServers}
+	eval mkdir -p ${bukkitServers}
 
 	sed -i "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newBukkitServer.sh
 	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupBukkitStart.sh cleanBukkitStart.sh regBukkitStart.sh bukkitServer.sh newBukkitServer.sh newDownloadedBukkitServer.sh
