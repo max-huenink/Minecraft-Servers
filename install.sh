@@ -2,12 +2,12 @@
 
 echo "Directories will be created if the do not exist."
 sleep 1.5
-echo "Given folder will be appended: i.e \'/serverFiles\'
+echo "Given folder will be appended: i.e \'/serverFiles\'"
 sleep 1.5
 
 echo "Where would you like your serverFiles directory to be located?"
 sleep 0.5
-echo -n "sFiles: "
+echo -n "serverFiles: "
 read sFiles
 serverFiles="${sFiles}/serverFiles"
 
