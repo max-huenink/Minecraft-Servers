@@ -27,7 +27,7 @@ echo "Where would you like your minecraftServers directory to be located?"
 sleep 0.5
 echo -n "minecraftServers: "
 read mServers
-minecraftServers="${
+minecraftServers="${mServers}/minecraftServers"
 
 echo "Creating ${minecraftServers}"
 eval mkdir -p ${minecraftServers}
@@ -36,8 +36,8 @@ vanilla=y
 #VANILLA
 if [[ ${vanilla} = y ]]
 then
-	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newServer.sh
-	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newServer.sh newDownloadedServer.sh cleanStart.sh backupStart.sh regStart.sh server.sh vUpdate.sh
+	sed -i "s|dir=\"~/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newServer.sh
+	sed -i "s|sFiles=\"~/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newServer.sh newDownloadedServer.sh cleanStart.sh backupStart.sh regStart.sh server.sh vUpdate.sh
 	eval bash ${serverFiles}/vUpdate.sh
 else
 sleep 0
@@ -51,8 +51,8 @@ read snapshot
 
 if [[ ${snapshot} = y ]]
 then
-	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newSnapshotServer.sh
-	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newSnapshotServer.sh newDownloadedSnapshotServer.sh snapshotStart.sh sVUpdate.sh
+	sed -i "s|dir=\"~/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newSnapshotServer.sh
+	sed -i "s|sFiles=\"~/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newSnapshotServer.sh newDownloadedSnapshotServer.sh snapshotStart.sh sVUpdate.sh
 	eval bash ${serverFiles}/sVUpdate.sh
 else
 sleep 0
@@ -75,8 +75,8 @@ bukkitServers="${bServers}/bukkitServers"
 	echo "Creating ${bukkitServers}"
 	eval mkdir -p ${bukkitServers}
 
-	sed -i "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newBukkitServer.sh
-	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupBukkitStart.sh cleanBukkitStart.sh regBukkitStart.sh bukkitServer.sh newBukkitServer.sh newDownloadedBukkitServer.sh
+	sed -i "s|dir=\"~/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newBukkitServer.sh
+	sed -i "s|sFiles=\"~/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupBukkitStart.sh cleanBukkitStart.sh regBukkitStart.sh bukkitServer.sh newBukkitServer.sh newDownloadedBukkitServer.sh
 else
 sleep 0
 fi
