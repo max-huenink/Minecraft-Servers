@@ -2,22 +2,26 @@
 
 echo "Directories will be created if the do not exist."
 sleep 1.5
-echo "Please specify full locations i.e: /home/\${USER}/Desktop/serverFiles"
+echo "Given folder will be appended: i.e \'/serverFiles\'
 sleep 1.5
 
 echo "Where would you like your serverFiles directory to be located?"
 sleep 0.5
-echo -n "serverFiles: "
-read serverFiles
+echo -n "sFiles: "
+read sFiles
+serverFiles="${sFiles}/serverFiles"
 
-echo "Creating ${serverFiles}"
-mkdir -P ${serverFiles}
-
-echo "Where is the 'serverFiles' directory located?"
+echo "Where is the downloaded repo located?"
 sleep 0.5
+echo "Example: ~/Desktop"
+sleep 0.75
+echo -n "Repo: "
 read location
-mv ${location} ${serverFiles}
-cd ${serverFiles}
+
+repo="${
+echo "Moving ${repo} to ${serverFiles}"
+eval mv ${location} ${serverFiles}
+eval cd ${serverFiles}
 
 echo "Where would you like your minecraftServers directory to be located?"
 sleep 0.5
@@ -25,7 +29,7 @@ echo -n "minecraftServers: "
 read minecraftServers
 
 echo "Creating ${minecraftServers}"
-mkdir -P ${minecraftServers}
+mkdir -p ${minecraftServers}
 vanilla=y
 
 #VANILLA
@@ -48,7 +52,7 @@ if [[ ${snapshot} = y ]]
 then
 	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newSnapshotServer.sh
 	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newSnapshotServer.sh newDownloadedSnapshotServer.sh snapshotStart.sh sVUpdate.sh
-	bash ${serverFiles}sVUpdate.sh
+	bash ${serverFiles}/sVUpdate.sh
 else
 sleep 0
 fi
@@ -67,7 +71,7 @@ then
 	read bukkitServers
 
 	echo "Creating ${bukkitServers}"
-	mkdir -P ${bukkitServers}
+	mkdir -p ${bukkitServers}
 
 	sed -i "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newBukkitServer.sh
 	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupBukkitStart.sh cleanBukkitStart.sh regBukkitStart.sh bukkitServer.sh newBukkitServer.sh newDownloadedBukkitServer.sh
