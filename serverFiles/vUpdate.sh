@@ -10,7 +10,7 @@ echo "What is the name of the new vanilla minecraft version? e.g "${oldV}
 #Displays old version as an example for a minecraft version
 read newV
 
-cd ${sFiles}
+eval cd ${sFiles}
 #Changes directory to minecraftServers
 
 wget -q --spider https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar && exist=yes || exist=no
@@ -19,9 +19,9 @@ wget -q --spider https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/mi
 
 if [[ ${exist} = yes ]]
 then
-	rm ${sFiles}/minecraft_server.${oldV}.jar
+	eval rm ${sFiles}/minecraft_server.${oldV}.jar
 	#Removes old version
-	wget https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar
+	curl -O https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar
 	#Downloads new version
 	sed -i "s|V=${oldV}|V=${newV}|g" ${sFiles}/regStart.sh
 	#Updates start file to use the new version
