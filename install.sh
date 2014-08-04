@@ -43,7 +43,7 @@ then
 #START SFILES
     mv backupStart.sh backupStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupStart.sh2 >> backupStart.sh && rm backupStart.sh2
 
-    mv cleanStart.sh cleanStart.sh2 && sed"s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" cleanStart.sh2 >> cleanStart.sh && rm cleanStart.sh2
+    mv cleanStart.sh cleanStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" cleanStart.sh2 >> cleanStart.sh && rm cleanStart.sh2
 
     mv newServer.sh newServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newServer.sh2 >> newServer.sh && rm newServer.sh2
 
