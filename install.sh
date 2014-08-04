@@ -18,7 +18,7 @@ read location
 
 repo="${location}/Minecraft-Servers-master/serverFiles"
 echo "Moving ${repo} to ${serverFiles}"
-eval mv ${location} ${serverFiles}
+eval mv ${repo} ${serverFiles}
 eval cd ${serverFiles}
 
 echo "Where would you like your minecraftServers directory to be located?"
