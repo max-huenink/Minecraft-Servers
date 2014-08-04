@@ -27,8 +27,6 @@ echo "Moving ${repo} to ${serverFiles}"
 eval mv ${repo} ${serverFiles}
 eval cd ${serverFiles}
 
-echo ""
-echo ""
 echo "Where would you like your minecraftServers directory to be located?"
 sleep 0.5
 echo "Example: ~/Desktop"
@@ -67,7 +65,8 @@ then
 
     mv vUpdate.sh vUpdate.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" vUpdate.sh2 >> vUpdate.sh && rm vUpdate.sh2
 #END SFILES
-	clear
+	echo ""
+	echo ""
 	eval bash ${serverFiles}/vUpdate.sh
 else
 sleep 0
@@ -95,7 +94,8 @@ then
 
     mv snapshotStart.sh snapshotStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" snapshotStart.sh2 >> snapshotStart.sh && rm snapshotStart.sh2
 #END SFILES
-	clear
+	echo ""
+	echo ""
 	eval bash ${serverFiles}/sVUpdate.sh
 else
 sleep 0
@@ -150,7 +150,6 @@ echo -n "New Server: "
 read new
 if [[ $new = y ]]
 then
-	clear
 	eval bash ${serverFiles}/newServer.sh
 else
 sleep 0
