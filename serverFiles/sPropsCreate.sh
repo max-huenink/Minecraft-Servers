@@ -3,7 +3,7 @@ echo "Would you like to make settings changes? [y/n]"
 read SET
 if [[ $SET = y ]]
 	then
-		echo '	op_perm_lvl="1"'
+		echo '	op_perm_lvl="2"'
 		sleep 0.3
 		echo '		Operator Permission Level'
 		sleep 0.4
@@ -36,7 +36,7 @@ if [[ $SET = y ]]
 					then
 						s2=4
 				else
-					s2=1
+					s2=2
 				fi
 					op_perm_lvl=${s2}
 		echo '	lvl_type="DEFAULT"'
@@ -170,7 +170,7 @@ if [[ $SET = y ]]
 						s16="true"
 					fi
 						npc_spawns=${s16}
-			echo '	white_list="true"'
+			echo '	white_list="false"'
 			sleep 0.25
 			echo '		White listing'
 			sleep 0.2
@@ -191,7 +191,7 @@ if [[ $SET = y ]]
 						then
 							s17="false"
 					else
-						s17="true"
+						s17="false"
 					fi
 						white_list=${s17}
 			echo '	animal_spawns="true"'
@@ -254,7 +254,7 @@ if [[ $SET = y ]]
 						s24=1
 					fi
 						diff=${s24}
-			echo '	idle_timeout="5"'
+			echo '	idle_timeout="0"'
 			sleep 0.2
 			echo '		How long a player/user can be idle before being disconnected (in minutes)'
 			sleep 0.3
@@ -266,7 +266,7 @@ if [[ $SET = y ]]
 						then
 							s27=${s27_1}
 					else
-						s27=5
+						s27=0
 					fi
 						idle_timeout=${s27}
 			echo '	gm="0"'
@@ -319,7 +319,7 @@ if [[ $SET = y ]]
 #						s28=15
 #					fi
 #						max_users=${s28}
-						max_users=15
+						max_users=20
 			echo '	monster_spawns="true"'
 			sleep 0.3
 			echo '		Monster spawning'
@@ -368,7 +368,7 @@ if [[ $SET = y ]]
 						s30="true"
 					fi
 						struct_gen=${s30}
-			echo '	spawn_protect="0"'
+			echo '	spawn_protect="15"'
 			sleep 0.3
 			echo '		Spawn protection'
 			sleep 0.3
@@ -380,7 +380,7 @@ if [[ $SET = y ]]
 						then
 							s32=${s32_1}
 					else
-						s32=0
+						s32=15
 					fi
 						spawn_protect=${s32}
 							> server.properties
@@ -450,20 +450,20 @@ if [[ $SET = y ]]
 
 	else
 		echo 'Creating server.properties'
-			op_perm_lvl="1"
+			op_perm_lvl="2"
 			lvl_type="DEFAULT"
 			force_gm="false"
 			seed=""
 			npc_spawns="true"
-			white_list="true"
+			white_list="false"
 			animal_spawns="true"
 			diff="1"
-			idle_timeout="5"
+			idle_timeout="0"
 			gm="0"
-			max_users="15"
+			max_users="20"
 			monster_spawns="true"
 			struct_gen="true"
-			spawn_protect="0"
+			spawn_protect="15"
 				> server.properties
 						echo "#Minecraft server properties" >> server.properties
 
