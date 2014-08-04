@@ -49,7 +49,7 @@ then
 
     mv newDownloadedServer.sh newDownloadedServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newDownloadedServer.sh2 >> newDownloadedServer.sh && rm newDownloadedServer.sh2
 
-    mv regStart.sh regStart.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" regStart.sh2 >> regStart.sh && rm regStart.sh2
+    mv regStart.sh regStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" regStart.sh2 >> regStart.sh && rm regStart.sh2
 
     mv server.sh server.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" server.sh2 >> server.sh && rm server.sh2
 
