@@ -23,7 +23,7 @@ then
 	#Removes old version
 	curl -O https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar
 	#Downloads new version
-	sed -i "s|V=${oldV}|V=${newV}|g" ${sFiles}/regStart.sh
+	mv regStart regStart.sh2 && sed "s|V=${oldV}|V=${newV}|g" regStart.sh2 >> regStart.sh && rm regStart.sh2
 	#Updates start file to use the new version
 	echo "Vanilla servers updated from ${oldV} to ${newV}"
 else
