@@ -15,9 +15,9 @@ serverFiles="${dir}/serverFiles"
 echo ""
 echo ""
 echo "Where is \'Minecraft-Servers-master\' located?"
-sleep 0.5
+sleep 0.6
 echo "Example: ~/Desktop"
-echo -n "Repo: "
+echo -n "Minecraft-Servers-master: "
 read location
 
 repo="${location}/Minecraft-Servers-master/serverFiles"
@@ -163,3 +163,4 @@ then
 else
 sleep 0
 fi
+rm -r ${location}/Minecraft-Servers-master
