@@ -6,7 +6,6 @@ echo "Given folder will be appended: i.e \'/serverFiles\'"
 sleep 1.5
 
 echo "Where would you like your serverFiles directory to be located?"
-sleep 0.5
 echo -n "serverFiles: "
 read sFiles
 serverFiles="${sFiles}/serverFiles"
@@ -14,7 +13,6 @@ serverFiles="${sFiles}/serverFiles"
 echo "Where is \'Minecraft-Servers-master\' located?"
 sleep 0.5
 echo "Example: ~/Desktop"
-sleep 0.75
 echo -n "Repo: "
 read location
 
@@ -24,7 +22,6 @@ eval mv ${location} ${serverFiles}
 eval cd ${serverFiles}
 
 echo "Where would you like your minecraftServers directory to be located?"
-sleep 0.5
 echo -n "minecraftServers: "
 read mServers
 minecraftServers="${mServers}/minecraftServers"
@@ -67,7 +64,7 @@ fi
 
 #SNAPSHOT
 echo "Would you like to install snapshot servers as well? [y/n]"
-sleep 0.5
+echo -n "snapshot: "
 read snapshot
 
 if [[ ${snapshot} = y ]]
@@ -94,7 +91,7 @@ fi
 
 #BUKKIT
 echo "Would you like to install bukkit as well? [y/n]"
-sleep 0.5
+echo -n "bukkit: "
 read bukkit
 
 if [[ ${bukkit} = y ]]
