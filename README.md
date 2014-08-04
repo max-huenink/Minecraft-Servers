@@ -3,8 +3,7 @@ Minecraft Servers Creation/Initialization
 Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers.
 
 WARNING: Only works on debian based systems, may work on windows if you have 'cygwin' installed, but this has not been tested fully.
-
-wget *NEEDS* to be installed for downloading of certain scripts to work properly.
+wget *NEEDS* to be installed.
 
 Make sure to either run 'install.sh' or put all the files in the right directories.
 ## Purpose
