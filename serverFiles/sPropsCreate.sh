@@ -3,6 +3,7 @@ echo "Would you like to make settings changes? [y/n]"
 read SET
 if [[ $SET = y ]]
 	then
+		clear
 		echo '	op_perm_lvl="2"'
 		sleep 0.3
 		echo '		Operator Permission Level'
