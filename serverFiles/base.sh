@@ -99,7 +99,7 @@ ${dots2}
 		####end####
 
 		####Sets level-name####
-		sed -i "s|level-name=world|level-name=${WORLD}|g" server.properties
+		mv server.properties server.properties2 && sed "s|level-name=world|level-name=${WORLD}|g" server.properties2 >> server.properties && rm server.properties2
 		echo "Changing level-name=world to level-name="${WORLD} "in server.properties"
 		sleep 0.8
 		${dots}
@@ -120,7 +120,7 @@ ${dots2}
 		sleep 0.4
 		echo -n "motd="
 		read MOTD
-		sed -i "s|motd=A Minecraft Server|motd=${MOTD}|g" server.properties
+		mv server.properties server.properties2 && sed "s|motd=A Minecraft Server|motd=${MOTD}|g" server.properties2 >> server.properties && rm server.properties2
 		motd2=$(cat server.properties | grep motd=)
 		echo "Editing motd to "${motd2}
 		${dots2}
