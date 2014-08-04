@@ -6,10 +6,14 @@ echo "Given folder will be appended: i.e \'/serverFiles\'"
 sleep 1.5
 
 echo "Where would you like your serverFiles directory to be located?"
+sleep 0.5
+echo "Example: ~/Desktop"
 echo -n "serverFiles: "
 read dir
 serverFiles="${dir}/serverFiles"
 
+echo ""
+echo ""
 echo "Where is \'Minecraft-Servers-master\' located?"
 sleep 0.5
 echo "Example: ~/Desktop"
@@ -17,15 +21,23 @@ echo -n "Repo: "
 read location
 
 repo="${location}/Minecraft-Servers-master/serverFiles"
+echo ""
+echo ""
 echo "Moving ${repo} to ${serverFiles}"
 eval mv ${repo} ${serverFiles}
 eval cd ${serverFiles}
 
+echo ""
+echo ""
 echo "Where would you like your minecraftServers directory to be located?"
+sleep 0.5
+echo "Example: ~/Desktop"
 echo -n "minecraftServers: "
 read mServers
 minecraftServers="${mServers}/minecraftServers"
 
+echo ""
+echo ""
 echo "Creating ${minecraftServers}"
 eval mkdir -p ${minecraftServers}
 vanilla=y
@@ -55,12 +67,13 @@ then
 
     mv vUpdate.sh vUpdate.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" vUpdate.sh2 >> vUpdate.sh && rm vUpdate.sh2
 #END SFILES
+	clear
 	eval bash ${serverFiles}/vUpdate.sh
 else
 sleep 0
 fi
 #END VANILLA
-
+clear
 #SNAPSHOT
 echo "Would you like to install snapshot servers as well? [y/n]"
 echo -n "snapshot: "
@@ -82,12 +95,13 @@ then
 
     mv snapshotStart.sh snapshotStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" snapshotStart.sh2 >> snapshotStart.sh && rm snapshotStart.sh2
 #END SFILES
+	clear
 	eval bash ${serverFiles}/sVUpdate.sh
 else
 sleep 0
 fi
 #END SNAPSHOT
-
+clear
 #BUKKIT
 echo "Would you like to install bukkit as well? [y/n]"
 echo -n "bukkit: "
@@ -96,11 +110,14 @@ read bukkit
 if [[ ${bukkit} = y ]]
 then
 	echo "Where would you like your bukkitServers directory to be located?"
-	sleep 1
+	sleep 0.5
+	echo "Example: ~/Desktop"
 	echo -n "bukkitServers: "
 	read bServers
 	bukkitServers="${bServers}/bukkitServers"
 
+	echo ""
+	echo ""
 	echo "Creating ${bukkitServers}"
 	eval mkdir -p ${bukkitServers}
 
@@ -128,3 +145,13 @@ else
 sleep 0
 fi
 #END BUKKIT
+echo "Would you like to create a new server right away? [y/n]"
+echo -n "New Server: "
+read new
+if [[ $new = y ]]
+then
+	clear
+	eval bash ${serverFiles}/newServer.sh
+else
+sleep 0
+fi
