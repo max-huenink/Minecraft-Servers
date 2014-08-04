@@ -7,8 +7,8 @@ sleep 1.5
 
 echo "Where would you like your serverFiles directory to be located?"
 echo -n "serverFiles: "
-read sFiles
-serverFiles="${sFiles}/serverFiles"
+read dir
+serverFiles="${dir}/serverFiles"
 
 echo "Where is \'Minecraft-Servers-master\' located?"
 sleep 0.5
@@ -34,11 +34,11 @@ vanilla=y
 if [[ ${vanilla} = y ]]
 then
 #START DIR
-    mv newDownloadedServer.sh newDownloadedServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newDownloadedServer.sh2 >> newDownloadedServer.sh && rm newDownloadedServer.sh2
+    mv newDownloadedServer.sh newDownloadedServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newDownloadedServer.sh2 >> newDownloadedServer.sh && rm newDownloadedServer.sh2
 
-    mv newServer.sh newServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newServer.sh2 >> newServer.sh && rm newServer.sh2
+    mv newServer.sh newServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newServer.sh2 >> newServer.sh && rm newServer.sh2
 
-    mv server.sh server.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" server.sh2 >> server.sh && rm server.sh2
+    mv server.sh server.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" server.sh2 >> server.sh && rm server.sh2
 #END DIR
 #START SFILES
     mv backupStart.sh backupStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupStart.sh2 >> backupStart.sh && rm backupStart.sh2
@@ -49,13 +49,12 @@ then
 
     mv newDownloadedServer.sh newDownloadedServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newDownloadedServer.sh2 >> newDownloadedServer.sh && rm newDownloadedServer.sh2
 
-    mv regStart.sh regStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" regStart.sh2 >> regStart.sh && rm regStart.sh2
+    mv regStart.sh regStart.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" regStart.sh2 >> regStart.sh && rm regStart.sh2
 
     mv server.sh server.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" server.sh2 >> server.sh && rm server.sh2
 
     mv vUpdate.sh vUpdate.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" vUpdate.sh2 >> vUpdate.sh && rm vUpdate.sh2
 #END SFILES
-
 	eval bash ${serverFiles}/vUpdate.sh
 else
 sleep 0
@@ -70,9 +69,9 @@ read snapshot
 if [[ ${snapshot} = y ]]
 then
 #START DIR
-    mv newDownloadedSnapshotServer.sh newDownloadedSnapshotServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newDownloadedSnapshotServer.sh2 >> newDownloadedSnapshotServer.sh && rm newDownloadedSnapshotServer.sh2
+    mv newDownloadedSnapshotServer.sh newDownloadedSnapshotServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newDownloadedSnapshotServer.sh2 >> newDownloadedSnapshotServer.sh && rm newDownloadedSnapshotServer.sh2
 
-    mv newSnapshotServer.sh newSnapshotServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newSnapshotServer.sh2 >> newSnapshotServer.sh && rm newSnapshotServer.sh2
+    mv newSnapshotServer.sh newSnapshotServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newSnapshotServer.sh2 >> newSnapshotServer.sh && rm newSnapshotServer.sh2
 #END DIR
 #START SFILES
     mv newDownloadedSnapshotServer.sh newDownloadedSnapshotServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newDownloadedSnapshotServer.sh2 >> newDownloadedSnapshotServer.sh && rm newDownloadedSnapshotServer.sh2
@@ -106,11 +105,11 @@ then
 	eval mkdir -p ${bukkitServers}
 
 #START DIR
-    mv bukkitServer.sh bukkitServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" bukkitServer.sh2 >> bukkitServer.sh && rm bukkitServer.sh2
+    mv bukkitServer.sh bukkitServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" bukkitServer.sh2 >> bukkitServer.sh && rm bukkitServer.sh2
 
-    mv newBukkitServer.sh newBukkitServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newBukkitServer.sh2 >> newBukkitServer.sh && rm newBukkitServer.sh2
+    mv newBukkitServer.sh newBukkitServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newBukkitServer.sh2 >> newBukkitServer.sh && rm newBukkitServer.sh2
 
-    mv newDownloadedBukkitServer.sh newDownloadedBukkitServer.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newDownloadedBukkitServer.sh2 >> newDownloadedBukkitServer.sh && rm newDownloadedBukkitServer.sh2
+    mv newDownloadedBukkitServer.sh newDownloadedBukkitServer.sh2 && sed "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newDownloadedBukkitServer.sh2 >> newDownloadedBukkitServer.sh && rm newDownloadedBukkitServer.sh2
 #END DIR
 #START SFILES
     mv backupBukkitStart.sh backupBukkitStart.sh2 && sed "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupBukkitStart.sh2 >> backupBukkitStart.sh && rm backupBukkitStart.sh2
