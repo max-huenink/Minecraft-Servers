@@ -4,9 +4,7 @@ Files for creating/starting minecraft servers (vanilla and snapshot), as well as
 
 WARNING: Only works on debian based systems, may work on windows if you have 'cygwin' installed, but this has not been tested fully.
 
-I am working on getting this working for Mac systems, some commands do not work as expected on Mac and I am looking for a workaround with that.
-
-Also, wget needs to be installed for downloading of certain scripts to work properly.
+wget *NEEDS* to be installed for downloading of certain scripts to work properly.
 
 Make sure to either run 'install.sh' or put all the files in the right directories.
 ## Purpose
