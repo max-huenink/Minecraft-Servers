@@ -24,8 +24,17 @@ repo="${location}/Minecraft-Servers-master/serverFiles"
 echo ""
 echo ""
 echo "Moving ${repo} to ${serverFiles}"
+eval mv ${repo} ${serverFiles} && complete=yes || complete=no
+if [[ $complete = no ]]
+then
+echo "Ignore that error message, that's normal and is being corrected."
+eval mkdir -p ${serverFiles}
+eval rm -r ${serverFiles}
 eval mv ${repo} ${serverFiles}
 eval cd ${serverFiles}
+else
+eval cd ${serverFiles}
+fi
 
 echo "Where would you like your minecraftServers directory to be located?"
 sleep 0.5
