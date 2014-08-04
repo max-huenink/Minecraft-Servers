@@ -23,7 +23,7 @@ then
 	#Removes old version
 	wget https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar
 	#Downloads new version
-	sed -i "s|V=${oldV}|V=${newV}|g" ${sFiles}/snapshotStart.sh
+	mv snapshotStart.sh snapshotStart.sh2 && sed "s|V=${oldV}|V=${newV}|g" snapshotStart.sh2 >> snapshotStart.sh && rm snapshotStart.sh2
 	#Updates start file to use the new version
 	echo "Snapshot servers update from ${oldV} to ${newV}"
 else
