@@ -18,6 +18,7 @@ dots3="bash ${sFiles}/dots3.sh"
 #The "dir" variable is enherited from parent scripts "new*Server.sh"
 
 echo "What is the name of the new server?"
+echo -n "Name: "
 read WORLD
 export WORLD
 #Gets server name, exports for child scripts that are used.
@@ -106,6 +107,8 @@ ${dots2}
 		####end####
 
 		####Sets motd####
+		echo ""
+		echo ""
 		echo "What would you like the MOTD to be?"
 		sleep 0.5
 		echo "Use this \\\\\\\\u00A7 for format codes."
@@ -146,6 +149,8 @@ if [ ${DOWNLOAD} = yes ]
 		################download.sh################
 		###########################################
 
+			echo ""
+			echo ""
 			echo "What is the download URL?"
 			echo -n "URL: "
 			read URL
