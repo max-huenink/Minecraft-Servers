@@ -40,6 +40,7 @@ if [[ $SET = y ]]
 					s2=2
 				fi
 					op_perm_lvl=${s2}
+		clear
 		echo '	lvl_type="DEFAULT"'
 		sleep 0.3
 		echo '		The type of level that is generated'
@@ -112,6 +113,7 @@ if [[ $SET = y ]]
 					s10="DEFAULT"
 				fi
 					lvl_type=${s10}
+			clear
 			echo '	force_gm="false"'
 			sleep 0.3
 			echo '		Force gamemode when user logs in'
@@ -138,6 +140,7 @@ if [[ $SET = y ]]
 						s12="false"
 					fi
 						force_gm=${s12}
+			clear
 			echo '	seed=""'
 			sleep 0.2
 			echo '		The seed for the world'
@@ -147,6 +150,7 @@ if [[ $SET = y ]]
 			echo -n 'seed='
 				read s13
 					seed=${s13}
+			clear
 			echo '	npc_spawns="true"'
 			sleep 0.3
 			echo '		NPC spawning'
@@ -171,6 +175,7 @@ if [[ $SET = y ]]
 						s16="true"
 					fi
 						npc_spawns=${s16}
+			clear
 			echo '	white_list="false"'
 			sleep 0.25
 			echo '		White listing'
@@ -195,6 +200,7 @@ if [[ $SET = y ]]
 						s17="false"
 					fi
 						white_list=${s17}
+			clear
 			echo '	animal_spawns="true"'
 			sleep 0.2
 			echo '		Animal spawning'
@@ -219,6 +225,7 @@ if [[ $SET = y ]]
 						s18="true"
 					fi
 						animal_spawns=${s18}
+			clear
 			echo '	diff="1"'
 			sleep 0.2
 			echo '		Game difficulty'
@@ -255,6 +262,7 @@ if [[ $SET = y ]]
 						s24=1
 					fi
 						diff=${s24}
+			clear
 			echo '	idle_timeout="0"'
 			sleep 0.2
 			echo '		How long a player/user can be idle before being disconnected (in minutes)'
@@ -270,6 +278,7 @@ if [[ $SET = y ]]
 						s27=0
 					fi
 						idle_timeout=${s27}
+			clear
 			echo '	gm="0"'
 			sleep 0.2
 			echo '		Gamemode'
@@ -306,6 +315,7 @@ if [[ $SET = y ]]
 						s26=0
 					fi
 						gm=${s26}
+#			clear
 #			echo '	max_users="15"'
 #			sleep 0.1
 #			echo '		Maximum users/players allowed on the server'
@@ -321,6 +331,7 @@ if [[ $SET = y ]]
 #					fi
 #						max_users=${s28}
 						max_users=20
+			clear
 			echo '	monster_spawns="true"'
 			sleep 0.3
 			echo '		Monster spawning'
@@ -345,6 +356,7 @@ if [[ $SET = y ]]
 						s29="true"
 					fi
 						monster_spawns=${29}
+			clear
 			echo '	struct_gen="true"'
 			sleep 0.3
 			echo '		Structure generation'
@@ -369,6 +381,7 @@ if [[ $SET = y ]]
 						s30="true"
 					fi
 						struct_gen=${s30}
+			clear
 			echo '	spawn_protect="15"'
 			sleep 0.3
 			echo '		Spawn protection'
