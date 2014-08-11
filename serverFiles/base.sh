@@ -161,9 +161,14 @@ if [ ${DOWNLOAD} = yes ]
 			unzip file.zip
 			echo "Unzipping"
 
-			FILE=$(unzip -l file.zip | sed -n 4p | cut -c 31-400)
-			echo "Getting world name"
-			${dots3}
+#			FILE=$(unzip -l file.zip | sed -n 4p | cut -c 31-400)
+#			echo "Getting world name"
+#			${dots3}
+
+			echo "What is the world file name?"
+			sleep .5
+			unzip -l file.zip
+			read FILE
 
 			mv "${FILE}" ${WORLD}
 			echo "Renaming world file to correct name"
