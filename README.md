@@ -15,7 +15,7 @@ If instructions are not very clear, please let me know. This is the first time I
 ## Installation/Initialization
 To install, download entire 'serverFiles' directory, as well as 'install.sh'
 
-It doesn't matter where the 'serverFiles' directory is located, as long as you know the FULL location. '/home/${USER}/Downloads/serverFiles/' for example.
+It doesn't matter where the 'serverFiles' directory is located, as long as you know the FULL location. '~/Desktop/serverFiles/' for example.
 
 Next, you'll want to run 'install.sh' That will prompt you for where you want to install everything, and it will create the directory, and install all necessary files for you.
 
