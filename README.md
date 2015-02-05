@@ -2,16 +2,16 @@ Minecraft Servers Creation/Initialization
 ================
 Files for creating/starting minecraft servers (vanilla and snapshot), as well as bukkit servers.
 
-WARNING: Only works on debian based systems, may work on windows if you have 'cygwin' installed, but this has not been tested fully.
+WARNING: Only works on debian based systems or windows if you have 'cygwin' installed.
 wget *NEEDS* to be installed.
 
-Make sure to either run 'install.sh' or put all the files in the right directories.
+Make sure to either run 'install.sh' (Work in progress) or put all the files in the right directories, updating sFiles and dir variables correspondingly with their location per script. Sorry this may not be convienient.
 ## Purpose
-These scripts are for creating/starting minecraft servers (both vanilla and snapshot versions), as well as bukkit servers.
+These scripts are for creating/starting minecraft servers; Vanilla, Snapshot, Bukkit (Down as of August 24th, 2014), Forge.
 
 I will take any suggestions on things that need to be improved/added/removed
 
-If instructions are not very clear, please let me know. This is the first time I have done anything like this.
+If instructions are not very clear, please let me know.
 ## Installation/Initialization
 To install, download entire 'serverFiles' directory, as well as 'install.sh'
 
@@ -23,7 +23,7 @@ To create your first server, run 'newServer.sh' and that will prompt you what th
 
 If you would like to create a snapshot server, run 'newSnapshotServer.sh' and it will do the same thing, running 'base.sh' after declaring proper runtime variables.
 ## Aliases
-I recommend that you create some aliases to run the files that start/create your servers. Such as:
+Aliases will help you run the files that start/create your servers much easier. Such as (NOT FULL LIST OF ALIASES):
 	
 	alias server='bash /home/${USER}/Desktop/serverFiles/server.sh'
 	alias servers='cd /home/${USER}/Desktop/minecraftServers/'
@@ -36,6 +36,7 @@ I recommend that you create some aliases to run the files that start/create your
 	alias serverFiles='cd /home/${USER}/Desktop/serverFiles/'
 ## Required Files
 	regStart.sh
+	fStart.sh
 	vUpdate.sh
 
 	newServer.sh
