@@ -1,5 +1,9 @@
 #!/bin/bash
-sFiles="/home/${USER}/Desktop/serverFiles"
-V=14w29b
-#Version
-java -Xms1G -Xmx1G -jar ${sFiles}/minecraft_server.${V}.jar nogui
+sType=snap
+export sType
+
+if [[ $OSTYPE = linux-gnu ]]; then
+        bash /media/max/UNTITLED/servers/serverFiles/fStart.sh
+elif [[ $OSTYPE = cygwin ]]; then
+        bash /cygdrive/e/servers/serverFiles/fStart.sh
+fi
