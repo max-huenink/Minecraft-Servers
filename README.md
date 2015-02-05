@@ -51,12 +51,3 @@ I recommend that you create some aliases to run the files that start/create your
 	dots2.sh
 	dots3.sh
 	dots4.sh
-## Optional Files
-	snapshotStart.sh
-	sVUpdate.sh
-	newSnapshotServer.sh
-	newDownloadedSnapshotServer.sh
-	
-	regBukkitStart.sh
-	newBukkitServer.sh
-	newBukkitDownloadedServer
