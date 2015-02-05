@@ -1,14 +1,11 @@
 #!/bin/bash
-
-sFiles="/home/${USER}/Desktop/serverFiles"
-
 W=$(cat server.properties | grep level-name= | cut -c 12-40)
 #Gets level-name
-Z=$W"_$(date +%d-%m-%Y-%H:%M:%S).zip"
+Z=$W"_$(date +%Y-%m-%d-%H.%M.%S).tar"
 #Defines what the zip filename is
-zip -r $Z $W
+tar -cvf $Z $W
 #Zips the world file (${W}) recursively to ${Z}
 s=$(cat sType)
 #Gets the startFile to start the server with
-bash ${sFiles}/${s}
+bash ${s}
 #Starts the proper server
