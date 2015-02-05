@@ -1,31 +1,48 @@
 #!/bin/bash
 
-sFiles="/home/${USER}/Desktop/serverFiles"
-#directory of serverFiles
+sFiles="unknown"
+if [[ $OSTYPE = "linux-gnu" ]]; then
+        sFiles="/media/max/UNTITLED/servers/serverFiles"
+elif [[ $OSTYPE = "cygwin" ]]; then
+        sFiles="/cygdrive/e/servers/serverFiles"
+fi
 
-oldV=$(cat ${sFiles}/regStart.sh | grep V= | cut -c 3-40)
+oldVV=$(cat ${sFiles}/fStart.sh | grep VV= | cut -c 4-40)
 #Old minecraft version
 
-echo "What is the name of the new vanilla minecraft version? e.g "${oldV}
+currentFV=$(cat ${sFiles}/fStart.sh | grep FV= | cut -c 4-40)
+#Current Forge Version
+
+currentSV=$(cat ${sFiles}/fStart.sh | grep SV= | cut -c 4-40)
+#Current Snapshot Version
+
+echo "What is the name of the new vanilla minecraft version? e.g "${oldVV}
 #Displays old version as an example for a minecraft version
-read newV
+read newVV
 
-eval cd ${sFiles}
-#Changes directory to minecraftServers
+cd ${sFiles}
+#Changes directory to sFiles
 
-wget -q --spider https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar && exist=yes || exist=no
-#Checks if the new version exists yet
-#exist=yes if it does =no if it doesn't
+wget -q --spider https://s3.amazonaws.com/Minecraft.Download/versions/${newVV}/minecraft_server.${newVV}.jar && remoteExist=yes || remoteExist=no
+#Checks if the new version exists on the remote host
+#remoteExist=yes if it does =no if it doesn't
 
-if [[ ${exist} = yes ]]
+if [[ ${remoteExist} = yes ]]
 then
-	eval rm ${sFiles}/minecraft_server.${oldV}.jar
-	#Removes old version
-	curl -#O https://s3.amazonaws.com/Minecraft.Download/versions/${newV}/minecraft_server.${newV}.jar
-	#Downloads new version
-	mv regStart.sh regStart.sh2 && sed "s|V=${oldV}|V=${newV}|g" regStart.sh2 >> regStart.sh && rm regStart.sh2
-	#Updates start file to use the new version
-	echo "Vanilla servers updated from ${oldV} to ${newV}"
+        if [[ ${oldVV} != ${currentFV} ]]; then
+                rm ${sFiles}/minecraft_server.${oldVV}.jar
+        fi
+        #Removes old version
+        if [[ ! -e minecraft_server.${newVV}.jar ]]; then
+                curl -#O https://s3.amazonaws.com/Minecraft.Download/versions/${newVV}/minecraft_server.${newVV}.jar
+        elif [[ -e minecraft_server.${newVV}.jar ]]; then
+                rm minecraft_server.${newVV}.jar
+                curl -#O https://s3.amazonaws.com/Minecraft.Download/version/${newVV}/minecraft_server.${newVV}.jar
+        fi
+        #Downloads new version
+        sed -i "s|VV=${oldVV}|VV=${newVV}|g" ${sFiles}/fStart.sh
+        #Updates start file to use the new version
+        echo "Vanilla servers updated from ${oldVV} to ${newVV}"
 else
-	echo "Vanilla servers not update as minecraft_server.${newV}.jar does not exist"
+        echo "Vanilla servers not update as minecraft_server.${newVV}.jar does not exist"
 fi
