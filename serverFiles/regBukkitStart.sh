@@ -1,5 +1,9 @@
 #!/bin/sh
-sFiles="/home/${USER}/Desktop/serverFiles"
-V=-dev.1.7.10
-#Version
-java -Xmx1024M -jar ${sFiles}/craftbukkit-${V}.jar -o true
+sType=bukkit
+export sType
+
+if [[ $OSTYPE = "linux-gnu" ]]; then
+        bash /media/max/UNTITLED/servers/serverFiles/fStart.sh
+elif [[ $OSTYPE = "cygwin" ]]; then
+        bash /cygdrive/e/servers/serverFiles/fStart.sh
+fi
