@@ -1,11 +1,19 @@
 #!/bin/bash
 
-sFiles="/home/${USER}/Desktop/serverFiles"
+sFiles="unknown"
+dir="unknown"
+if [[ $OSTYPE = "linux-gnu" ]]; then
+        sFiles="/media/max/UNTITLED/servers/serverFiles"
+        dir="/media/max/UNTITLED/servers/minecraftServers"
+elif [[ $OSTYPE = "cygwin" ]]; then
+        sFiles="/cygdrive/e/servers/serverFiles"
+        dir="/cygdrive/e/servers/minecraftServers"
+fi
+
 export sFiles
 #The directory for all server files
 #Is exported to child 'base.sh'
 
-dir="/home/${USER}/Desktop/minecraftServers"
 export dir
 #The DIRectory variable
 #Used to define the directory of the minecraftServers, change as necessary.
