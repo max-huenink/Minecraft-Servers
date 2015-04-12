@@ -14,9 +14,9 @@ if [[ $schange = y || $schange = Y ]]; then
 	mkdir -p ${sloc}
 	mv ./serverFiles ${sloc}
 	if [[ $OSTYPE = linux-gnu ]]; then
-		sed -i "s|sFiles=~/Minecraft-Servers/serverFiles|sFiles=${sloc}/serverFiles|g" ${sloc}/serverFiles/*sh
+		sed -i "s|sFiles=\"~/Minecraft-Servers/serverFiles\"|sFiles=\"${sloc}/serverFiles\"|g" ${sloc}/serverFiles/*sh
 	elif [[ $OSYPE = cygwin ]]; then
-		sed -i "s|WsFiles=~/Minecraft-Servers/serverFiles|WsFiles=${sloc}/serverFiles|g" ${sloc}/serverFiles/*sh
+		sed -i "s|WsFiles=\"~/Minecraft-Servers/serverFiles\"|WsFiles=\"${sloc}/serverFiles\"|g" ${sloc}/serverFiles/*sh
 fi
 echo "Current location for servers is: " ~/Minecraft-Servers/minecraftServers
 echo "Would you liek to change it?"
@@ -31,9 +31,9 @@ if [[ $dchange = y || $dchange = Y ]]; then
 	read dloc
 	mkdir -p ${dloc}/minecraftServers
 	if [[ $OSTPYE = linux-gnu ]]; then
-		sed -i "s|dir=~/Minecraft-Servers/minecraftServers|dir=${dloc}/minecraftServers|g" ${sloc}/serverFiles/*sh
+		sed -i "s|dir=\"~/Minecraft-Servers/minecraftServers\"|dir=\"${dloc}/minecraftServers\"|g" ${sloc}/serverFiles/*sh
 	elif [[ $OSTYPE = cygwin ]]; then
-		sed -i "s|dir=~/Minecraft-Servers/minecraftServers|dir=${dloc}/minecraftServers|g" ${sloc}/serverFiles/*sh
+		sed -i "s|dir=\"~/Minecraft-Servers/minecraftServers\"|dir=\"${dloc}/minecraftServers\"|g" ${sloc}/serverFiles/*sh
 else
 	mkdir ./minecraftServers
 fi
