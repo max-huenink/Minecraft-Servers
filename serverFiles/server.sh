@@ -1,14 +1,18 @@
 #!/bin/bash
 
-sFiles="unknown"
-dir="unknown"
-if [[ $OSTYPE = "linux-gnu" ]]; then
-        sFiles="/media/max/UNTITLED/servers/serverFiles"
-        dir="/media/max/UNTITLED/servers/minecraftServers"
-elif [[ $OSTYPE = "cygwin" ]]; then
-        sFiles="/cygdrive/e/servers/serverFiles"
-        dir="/cygdrive/e/servers/minecraftServers"
+server=$server_
+export server
+
+if [[ $OSTYPE = linux-gnu ]]; then
+	sFiles="/media/max/UNTITLED/servers/serverFiles"
+	dir="/media/max/UNTITLED/servers/minecraftServers"
+elif [[ $OSTYPE = cygwin ]]; then
+	sFiles="/cygdrive/e/servers/serverFiles"
+	dir="/cygdrive/e/servers/minecraftServers"
 fi
+
+export sFiles
+#The director for all server files
 
 export dir
 #The DIRectory variable
