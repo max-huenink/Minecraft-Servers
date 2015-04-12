@@ -1,75 +1,39 @@
 #!/bin/bash
 
-#echo "Directories will be created if the do not exist."
-#sleep 1.5
-#echo "Please specify full locations i.e: /home/\${USER}/Desktop/serverFiles"
-#sleep 1.5
-
-#echo "Where would you like your serverFiles directory to be located?"
-#sleep 0.5
-#echo -n "serverFiles: "
-#read serverFiles
-serverFiles='~/.servers/serverFiles'
-echo "Creating ${serverFiles}"
-mkdir -P ${serverFiles}
-
-#echo "Where is the 'serverFiles' directory located?"
-#sleep 0.5
-#read location
-#mv ${location} ${serverFiles}
-#cd ${serverFiles}
-mv ./serverFiles ${serverFiles}
-
-#echo "Where would you like your minecraftServers directory to be located?"
-#sleep 0.5
-#echo -n "minecraftServers: "
-#read minecraftServers
-
-minecraftServers='~/servers/minecraftServers'
-echo "Creating ${minecraftServers}"
-mkdir -P ${minecraftServers}
-vanilla=y
-
-#VANILLA
-if [[ ${vanilla} = y ]]
-then
-#	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newServer.sh
-#	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newServer.sh newDownloadedServer.sh cleanStart.sh backupStart.sh regStart.sh server.sh vUpdate.sh
-	bash ${serverFiles}/vUpdate.sh
+echo "Current location for sFiles is: " ~/Minecraft-Servers/serverFiles
+echo "Would you like to change it?"
+echo -n "y/[N]: "
+read schange
+if [[ $schange = y || $schange = Y ]]; then
+	echo "Where would you like sFiles to be located?"
+	echo "Linux e.g: /home/johnsmith/Desktop/myServers/"
+	echo "Windows(cygwin) e.g: /cygdrive/c/Users/John\ Smith/Desktop/myServers/"
+	echo "\'serverFiles\' directory will be created"
+	echo -n "Location: "
+	read sloc
+	mkdir -p ${sloc}
+	mv ./serverFiles ${sloc}
+	if [[ $OSTYPE = linux-gnu ]]; then
+		sed -i "s|sFiles=~/Minecraft-Servers/serverFiles|sFiles=${sloc}/serverFiles|g" ${sloc}/serverFiles/*sh
+	elif [[ $OSYPE = cygwin ]]; then
+		sed -i "s|WsFiles=~/Minecraft-Servers/serverFiles|WsFiles=${sloc}/serverFiles|g" ${sloc}/serverFiles/*sh
 fi
-#END VANILLA
-
-#SNAPSHOT
-#echo "Would you like to install snapshot servers as well? [y/n]"
-#sleep 0.5
-#read snapshot
-snapshot=y
-
-if [[ ${snapshot} = y ]]
-then
-#	sed -i "s|dir=\"/home/\${USER}/Desktop/minecraftServers\"|dir=${minecraftServers}|g" newSnapshotServer.sh
-#	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" newSnapshotServer.sh newDownloadedSnapshotServer.sh snapshotStart.sh sVUpdate.sh
-	bash ${serverFiles}sVUpdate.sh
+echo "Current location for servers is: " ~/Minecraft-Servers/minecraftServers
+echo "Would you liek to change it?"
+echo -n "y/[N]: "
+read dchange
+if [[ $dchange = y || $dchange = Y ]]; then
+	echo "Where would you like servers to be located?"
+	echo "Linux e.g: /home/johnsmith/Desktop/myServers/"
+	echo "Windows(cygwin) e.g: /cygdrive/c/Users/John\ Smith/Desktop/myServers/"
+	echo "\'minecraftServers\' director will be created"
+	echo -n "Location: "
+	read dloc
+	mkdir -p ${dloc}/minecraftServers
+	if [[ $OSTPYE = linux-gnu ]]; then
+		sed -i "s|dir=~/Minecraft-Servers/minecraftServers|dir=${dloc}/minecraftServers|g" ${sloc}/serverFiles/*sh
+	elif [[ $OSTYPE = cygwin ]]; then
+		sed -i "s|dir=~/Minecraft-Servers/minecraftServers|dir=${dloc}/minecraftServers|g" ${sloc}/serverFiles/*sh
+else
+	mkdir ./minecraftServers
 fi
-#END SNAPSHOT
-
-#BUKKIT
-#echo "Would you like to install bukkit as well? [y/n]"
-#sleep 0.5
-#read bukkit
-bukkit=n
-
-if [[ ${bukkit} = y ]]
-then
-	echo "Where would you like your bukkitServers directory to be located?"
-	sleep 1
-	echo -n "bukkitServers: "
-	read bukkitServers
-
-	echo "Creating ${bukkitServers}"
-	mkdir -P ${bukkitServers}
-
-	sed -i "s|dir=\"/home/\${USER}/Desktop/bukkitServers\"|dir=${bukkitServers}|g" newBukkitServer.sh
-	sed -i "s|sFiles=\"/home/\${USER}/Desktop/serverFiles\"|sFiles=${serverFiles}|g" backupBukkitStart.sh cleanBukkitStart.sh regBukkitStart.sh bukkitServer.sh newBukkitServer.sh newDownloadedBukkitServer.sh
-fi
-#END BUKKIT
