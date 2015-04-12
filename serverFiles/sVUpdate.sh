@@ -3,9 +3,10 @@
 newSV=$newSV_
 
 if [[ $OSTYPE = linux-gnu ]]; then
-	sFiles="/media/max/UNTITLED/servers/serverFiles"
+	sFiles="~/Minecraft-Servers/serverFiles"
 elif [[ $OSTYPE = cygwin ]]; then
-	sFiles="/cygdrive/e/servers/serverFiles"
+	WsFiles="~/Minecraft-Servers/serverFiles"
+	sFiles=${WsFiles}
 fi
 
 #directory of serverFiles

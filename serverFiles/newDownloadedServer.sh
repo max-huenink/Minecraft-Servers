@@ -4,11 +4,13 @@ world=$world_
 export world
 
 if [[ $OSTYPE = linux-gnu ]]; then
-	sFiles="/media/max/UNTITLED/servers/serverFiles"
-	dir="/media/max/UNTITLED/servers/minecraftServers"
+	sFiles="~/Minecraft-Servers/serverFiles"
+	dir="~/Minecraft-Servers/minecraftServers"
 elif [[ $OSTYPE = cygwin ]]; then
-	sFiles="/cygdrive/e/servers/serverFiles"
-	dir="/cygdrive/e/servers/minecraftServers"
+	WsFiles="~/Minecraft-Servers/serverFiles"
+	Wdir="~/Minecraft-Servers/minecraftServers"
+	sFiles=${WsFiles}
+	dir=${Wdir}
 fi
 
 export sFiles

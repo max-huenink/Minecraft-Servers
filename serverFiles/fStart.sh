@@ -17,28 +17,28 @@ MFV=1.7.10
 
 if [[ $sType = snap ]]; then
 	if [[ $OSTYPE = linux-gnu ]]; then
-		java -jar /media/max/UNTITLED/servers/serverFiles/minecraft_server.${SV}.jar nogui
+		java -jar ~/Minecraft-Servers/serverFiles/minecraft_server.${SV}.jar nogui
 	elif [[ $OSTYPE = cygwin ]]; then
-		java -jar E:\\servers\\serverFiles\\minecraft_server.${SV}.jar nogui
+		java -jar C:\\Users\\${USR}\\Minecraft-Servers\\serverFiles\\minecraft_server.${SV}.jar nogui
 	fi
 elif [[ $sType = reg ]]; then
 	if [[ $OSTYPE = linux-gnu ]]; then
-		java -jar /media/max/UNTITLED/servers/serverFiles/minecraft_server.${VV}.jar nogui
+		java -jar ~/Minecraft-Servers/serverFiles/minecraft_server.${VV}.jar nogui
 	elif [[ $OSTYPE = cygwin ]]; then
-		java -jar E:\\servers\\serverFiles\\minecraft_server.${VV}.jar nogui
+		java -jar C:\\Users\\${USR}\\Minecraft-Servers\\serverFiles\\minecraft_server.${VV}.jar nogui
 	fi
 elif [[ $sType = bukkit ]]; then
 #	if [[ $OSTYPE = linux-gnu ]]; then
-#		java -jar /media/max/UNTITLED/servers/serverFiles/craftbukkit-${BV}.jar -o true nogui
+#		java -jar ~/Minecraft-Servers/serverFiles/craftbukkit-${BV}.jar -o true nogui
 #	elif [[ $OSTYPE = cygwin ]]; then
-#		java -jar E:\\servers\\serverFiles\\craftbukkit-${BV}.jar -o true nogui
+#		java -jar C:\\Users\\${USR}\\Minecraft-Servers\\serverFiles\\craftbukkit-${BV}.jar -o true nogui
 	echo "Bukkit server compatability with these scripts is incomplete [1/25/15]"
 	echo "For now you have to manually maintain bukkit servers"
 	echo "Sorry for the inconvenience."
 elif [[ $sType = forge ]]; then
 	if [[ $OSTYPE = linux-gnu ]]; then
-		java -jar /media/max/UNTITLED/servers/serverFiles/forge-${FV}-universal.jar nogui
+		java -jar ~/Minecraft-Servers/serverFiles/forge-${FV}-universal.jar nogui
 	elif [[ $OSTYPE = cygwin ]]; then
-		java -jar E:\\servers\\serverFiles\\forge-${FV}-universal.jar nogui
+		java -jar C:\\Users\\${USR}\\Minecraft-Servers\\serverFiles\\forge-${FV}-universal.jar nogui
 	fi
 fi

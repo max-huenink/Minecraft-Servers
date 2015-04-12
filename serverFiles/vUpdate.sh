@@ -3,9 +3,10 @@
 newVV=$newVV_
 
 if [[ $OSTYPE = linux-gnu ]]; then
-	sFiles="/media/max/UNTITLED/servers/serverFiles"
+	sFiles="~/Minecraft-Servers/serverFiles"
 elif [[ $OSYTPE = cygwin ]]; then
-	sFiles="/cygdrive/e/servers/serverFiles"
+	WsFiles="~/Minecraft-Servers/serverFiles"
+	sFiles=${WsFiles}
 fi
 
 oldVV=$(cat ${sFiles}/fStart.sh | grep VV= | cut -c 4-40)
