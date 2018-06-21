@@ -270,9 +270,9 @@ apt-get -y install grub-pc
 grub-mkconfig -o /boot/grub/grub.cfg
 grub-install ${target_disk} --force
 mykern=\`ls /boot/vmlinuz-* | grep -oP \"[0-9].*\" | sort -rV | head -1\`
-curl -L -O https://goo.gl/HHiWbp
-bash HHiWbp \$mykern
-rm HHiWbp
+curl -L -O https://goo.gl/82GyHJ
+bash 82GyHJ \$mykern
+rm 82GyHJ
 useradd -m user -s /bin/bash
 echo user | echo user:user | chpasswd
 adduser user adm
